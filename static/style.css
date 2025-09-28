@@ -82,3 +82,28 @@ form button {
     margin-top: 1rem;
     border: none;
 }
+
+form #image {
+    display: none;
+
+}
+
+form .image-label {
+    background-color: var(--bg-200);
+    padding: 0.5rem;
+    color: var(--text-200);
+    margin-top: 1rem;
+    border: none;
+    text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.ads img {
+    width: 100%;
+
+}
