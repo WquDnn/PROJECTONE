@@ -30,13 +30,20 @@ app.get("/", (req, res)=>{
     res.render("index", {products: ads})
 })
 
+app.get("/post/:id", (req, res)=>{
+    let postId = req.params.id
+    if (!ads[postId]) {
+        res.render("notFound")
+        return
+    }
+    res.render("post", {products: ads[postId]})
+})
+
 app.post("/add", upload.fields([{name: "image"}]), (req, res)=>{
     let data = req.body
     data.image = req.files.image.map((file)=>file.filename)
     data.id = ads.length
     ads.push(data)
-    ads.push(req.body)
-    console.log(req.body)
     res.send({status: "ok"})
 })
 

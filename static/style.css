@@ -1,100 +1,130 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
 body {
-    background-color: var(--bg-100);
-    font-family: serif; 
-    color: var(--text-1000);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-:root {
-        --primary-1000:#810000;
-    --primary-200:#630000;
-    --primary-300:#3d3d3d;
-    --accent-100:#1c1c1c;
-    --accent-200:#212121;
-    --text-100:#1E2022;
-    --text-200:#212121;
-    --bg-100:#212121;
-    --bg-200:#050505;
-    --bg-300:#121212;
-      
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: #212121;
+  font-family: serif;
+  color: #050505;
 }
 
 #openBtn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 2rem;
-    border: none;
-    background-color: var(--primary-200);
-    color: var(--bg-100);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #630000;
+  color: #212121;
 }
 
 .modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    place-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal-content {
-    background-color: var(--primary-200);
-    padding: 1rem;
-    border-radius: 1rem;
+  background-color: #630000;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-
-input, textarea {
-    border: none;
-    padding: 1rem;
-    border: 5px;
+form input, form textarea {
+  border: none;
+  padding: 1rem;
+  border: 5px;
 }
-
-label {
-    margin-top: 1rem
+form label {
+  margin-top: 1rem;
 }
-
-.closeBtn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: transparent;
-    border: none;
+form .closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
 }
-
 form button {
-    background-color: var(--bg-200);
-    padding: 0.5rem;
-    color: var(--text-200);
-    margin-top: 1rem;
-    border: none;
+  background-color: #050505;
+  padding: 0.5rem;
+  color: #212121;
+  margin-top: 1rem;
+  border: none;
 }
-
 form #image {
-    display: none;
-
+  display: none;
 }
-
 form .image-label {
-    background-color: var(--bg-200);
-    padding: 0.5rem;
-    color: var(--text-200);
-    margin-top: 1rem;
-    border: none;
-    text-align: center;
+  background-color: #050505;
+  padding: 0.5rem;
+  color: #212121;
+  margin-top: 1rem;
+  border: none;
+  text-align: center;
 }
 
 .wrapper {
@@ -104,6 +134,7 @@ form .image-label {
 }
 
 .ads img {
-    width: 100%;
-
+  width: 100%;
 }
+
+/*# sourceMappingURL=style.css.map */

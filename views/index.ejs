@@ -6,7 +6,7 @@
     <main>
         <div class="wrapper">
             <% products.forEach((product)=> { -%>
-            <div class="ads">
+            <a class="ads" href="/post/<%= product.id %>">
                 <h3>
                     <%= product.title %>
                 </h3>
@@ -14,7 +14,7 @@
                     <%= products.desc %>
                 </p>
                 <img src="/uploads/<%= product.image[0] %> ">
-            </div>
+            </a>
             <% }) -%>
             
         </div>
