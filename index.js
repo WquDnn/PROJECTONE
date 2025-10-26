@@ -2,6 +2,7 @@ let express = require("express")
 const multer = require("multer")
 const path = require("path")
 let db = require("./db")
+const { privateDecrypt } = require("crypto")
 let app = express()
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
@@ -40,11 +41,18 @@ app.get("/", (req, res)=>{
 
 app.get("/post/:id", (req, res)=>{
     let postId = req.params.id
-    if (!ads[postId]) {
-        res.render("notFound")
-        return
-    }
-    res.render("post", {products: ads[postId]})
+    db.query(`SELECT p.*, c.id as commentId, c.author, c.comment FROM products as p LEFT JOIN comments as c
+        ON p.id = c.postId
+         WHERE p.id = ?`, postId, (err, result)=>{
+        if (err || result.length == 0){
+            console.log(err)
+            return res.status(404).render("notFound")
+        }
+        let product = result[0]
+        console.log(result)
+        product.image = JSON.parse(product.image)
+        res.status(200).render("post", {products: product})
+    })
 })
 
 app.post("/add", upload.fields([{name: "image"}]), (req, res)=>{
@@ -58,6 +66,16 @@ app.post("/add", upload.fields([{name: "image"}]), (req, res)=>{
     })
     
    
+})
+
+app.post("/comment", (req, res)=>{
+    let data = req.body
+    console.log(data)
+    db.query(`INSERT INTO comments SET ?`, data, (err, result)=>{
+        if (err) res.status(500)
+        res.end()
+    })
+    res.end()
 })
 
 app.use((req, res, next)=>{
