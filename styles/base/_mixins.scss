@@ -1,4 +1,4 @@
-@mixin responsive-container($max-width: 1200px, $padding: 16px) {
+@mixin responsive-container($max-width: 1800px, $padding: 16px) {
      width: 100%;
      max-width: $max-width;
      padding-inline: $padding;
@@ -14,7 +14,7 @@
      }
 }
 
-@mixin adaptElement($max-width: 400px, $padding: 16px){
+@mixin adaptElement($max-width: 300px, $padding: 16px){
     width: 100;
 
     @media (min-width: 769px) and (max-width: $max-width){

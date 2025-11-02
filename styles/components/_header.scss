@@ -2,10 +2,12 @@
 @use "../base/mixins" as m;
 
 header {
-    background: c.$primary-1000;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/001/942/096/original/light-blue-layout-with-lines-triangles-vector.jpg);
     color: c.$text-100;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
     padding: 1rem;
     text-align: center;
-    @include m.trandsparentShadow(c.$primary-200)
+    text-shadow: 0 0 2px white;
+    @include m.trandsparentShadow(c.$primary-1000)
 }

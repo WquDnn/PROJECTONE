@@ -7,7 +7,7 @@
 @debug f.calculateSpacing(10, 10);
 
 body {
-    background-color: $bg-100;
+    background-image: url(https://i.pinimg.com/originals/1f/f4/89/1ff48915cfaced72aaae91b97ec11885.jpg);
     font-family: serif; 
     color: $bg-200;
 }
@@ -42,6 +42,7 @@ form {
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: center;
 
     
 input, textarea {
@@ -73,6 +74,7 @@ label {
 
 #image {
     display: none;
+    justify-content: flex-end;
 
 }
 
@@ -84,6 +86,7 @@ label {
     margin-top: 1rem;
     border: none;
     text-align: center;
+    justify-content: flex-end;
 }
 }
 
@@ -105,6 +108,12 @@ label {
 
 .ads img {
     width: 100%;
+    border-color: rgb(255, 255, 255);
+    border: 10px;
+    border-radius: 5px;
+    border-width: 100px;
+    justify-content: flex-end;
+    border: 100px;
 
 }
 
@@ -112,5 +121,48 @@ label {
     @include mixin.adaptElement(1200px);
     @include mixin.trandsparentShadow($primary-1000);
     @include mixin.removeLinkStyle();
+    border: 10px;
+    border-color: white;
+    
 
+}
+
+
+footer {
+    color: white;
+
+}
+
+.texto {
+    color: white;
+    text-align: center;
+}
+
+#comment-form{
+    display: flex;
+    color: white;
+       justify-content: center;
+    max-width: 800px ;
+    margin: 0 auto;
+}
+
+
+
+.imgs {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    
+    
+}
+
+.comment-form .author{
+    color: white;
+}
+
+ul {
+    color: white;
+    width: 800px;
+    margin: 0 auto;
 }

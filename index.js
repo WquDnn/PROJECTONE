@@ -49,9 +49,11 @@ app.get("/post/:id", (req, res)=>{
             return res.status(404).render("notFound")
         }
         let product = result[0]
-        console.log(result)
         product.image = JSON.parse(product.image)
-        res.status(200).render("post", {products: product})
+        let comments = result.map(p=>{
+            return {id: p.commentId, author: p.author, text: p.comment}
+        })
+        res.status(200).render("post", {products : product, comments})
     })
 })
 
@@ -72,10 +74,11 @@ app.post("/comment", (req, res)=>{
     let data = req.body
     console.log(data)
     db.query(`INSERT INTO comments SET ?`, data, (err, result)=>{
-        if (err) res.status(500)
+        if (err) {
+            res.status(500)
+        }
         res.end()
     })
-    res.end()
 })
 
 app.use((req, res, next)=>{

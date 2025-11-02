@@ -14,6 +14,10 @@ document.querySelector(".openBtn").addEventListener("click", ()=>{
     document.querySelector(".modal").style.display = "grid"
 })
 
+let imggif = document.createElement("img")
+imggif.src = ""
+document.body.appendChild(imggif)
+
 // fetch("/ads").then(res=>res.json()).then(data=>{
 //     console.log(data)
 //     document.querySelector(".wrapper").innerHTML = data.map(el=>`

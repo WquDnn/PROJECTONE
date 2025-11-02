@@ -5,7 +5,7 @@
 <body>
     <%- include("header.ejs") -%>
     <main>
-        <h1>
+        <h1 class="texto">
             <%= products.title %>
         </h1>
         <p>
@@ -18,6 +18,25 @@
         </div>
     </main>
     <%- include("comment.ejs") -%>
+    <div class="commentlist">
+        <h2>Comments</h2>
+        <% if(comments[0].id == null) { -%>
+            <p>No comments yet</p>
+            <% } else { -%>
+        <ul>
+          <% comments.forEach((c)=> { -%>
+            <li>
+                <h3>
+                 Author: <%= c.author %>
+                </h3>
+                <p>
+                 <%= c.text %>
+                </p>
+            </li>
+            <% }) -%>
+        </ul>
+        <% } -%>
+    </div>
     <%- include("footer.ejs") -%>
 </body>
 </html>
